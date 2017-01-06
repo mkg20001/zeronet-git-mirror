@@ -43,10 +43,16 @@
 
   <div class="container">
     <div class="page" id="page-home">
-      <h2>GitMirror.bit is coming soon...</h2>
+      <center>
+        <h2 style="color:#8f8f8f">GitMirror</h2>
+        <h4 style="color:#4f4f4f">A ZeroNet GitHub/GitLab mirroring project</h4>
+        <h5>...Stay tuned...</h5>
+      </center>
     </div>
     <div class="page" id="page-users">
-      <h2>Users:</h2>
+      <center>
+        <h2 style="color:#8f8f8f">Users</h2>
+      </center>
       <div v-for="user in users">
         <div class="row" :onclick="redirect(user.id)">
           <div class="col-md-4" style="width:128px;">
@@ -57,35 +63,36 @@
             <h3>Repositories: {{user.repos}}</h3>
           </div>
         </div>
-        <!--<table>
-            <tr>
-              <td rowspan="2">
-              </td>
-              <td>
-                <h2>{{user.name}}</h2>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h3>Repositories: {{user.repos}}</h3>
-              </td>
-            </tr>
-          </table>!-->
       </div>
     </div>
     <div class="page" id="page-user">
+      <center>
+        <h2 style="color:#8f8f8f">User: {{user.name}}</h2>
+      </center>
       <h2>...Nothing here...</h2>
     </div>
     <div class="page" id="page-repos">
+      <center>
+        <h2 style="color:#8f8f8f">Repos</h2>
+      </center>
       <h2>...Nothing here...</h2>
     </div>
     <div class="page" id="page-repo">
+      <center>
+        <h2 style="color:#8f8f8f">{{user.name}}/{{repo.name}}</h2>
+      </center>
       <h2>...Nothing here...</h2>
     </div>
     <div class="page" id="page-hubs">
+      <center>
+        <h2 style="color:#8f8f8f">Hubs</h2>
+      </center>
       <h2>...Nothing here...</h2>
     </div>
     <div class="page" id="page-hub">
+      <center>
+        <h2 style="color:#8f8f8f">Hub: {{hub.name}}</h2>
+      </center>
       <h2>...Nothing here...</h2>
     </div>
     <div class="page" id="page-loading">
