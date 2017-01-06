@@ -1,0 +1,29 @@
+{
+  "name": "zeronet-git-mirror",
+  "authors": [
+    "mkg20001 <mkg20001@gmail.com>"
+  ],
+  "description": "...",
+  "main": "app/index.html",
+  "keywords": [
+    "zeronet",
+    "git",
+    "mirror"
+  ],
+  "license": "GPL-3.0",
+  "homepage": "zero/gitmirror.bit",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0"
+  }
+}

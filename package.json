@@ -1,0 +1,29 @@
+{
+  "name": "zeronet-git-mirror",
+  "version": "0.0.1",
+  "description": "...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zeronet",
+    "git",
+    "mirror"
+  ],
+  "author": "Maciej Krüger <mkg20001@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "del": "^2.2.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
+    "gulp-load-plugins": "^1.4.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.2",
+    "html-minifier": "^3.2.3",
+    "merge-stream": "^1.0.1",
+    "run-sequence": "^1.2.2"
+  }
+}
