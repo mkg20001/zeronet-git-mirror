@@ -197,9 +197,6 @@
    */
 
   page.show = function(path, state, dispatch, push) {
-    path=window.location.pathname+help.getNPath(path);
-    console.log(path,state,dispatch,push)
-    console.log(path,'is shown');
     var ctx = new Context(path, state);
     page.current = ctx.path;
     if (false !== dispatch) page.dispatch(ctx);
@@ -384,6 +381,9 @@
   function Context(path, state) {
     if ('/' === path[0] && 0 !== path.indexOf(base)) path = base + (hashbang ? '#!' : '') + path;
     var i = path.indexOf('?');
+
+    path=window.location.pathname+help.getNPath(path);
+
 
     this.canonicalPath = path;
     this.path = path.replace(base, '') || '/';

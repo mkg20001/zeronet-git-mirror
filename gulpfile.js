@@ -1,10 +1,10 @@
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
 const del = require('del');
-const runSequence = require('run-sequence');
+/*const runSequence = require('run-sequence');
 const merge = require('merge-stream');
 const path = require('path');
-const fs = require("fs");
+const fs = require("fs");*/
 
 const dist="dist"
 

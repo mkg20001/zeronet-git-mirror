@@ -1,7 +1,7 @@
 help = {
   que:{},
   getQPath:() => {
-    return help.getNPath(window.location.href)
+    return help.getNPath(window.location.pathname+window.location.search)
   },
   getNPath:(path) => {
     if (!path.startsWith("/")&&!path.startsWith("?")) return path;
@@ -27,7 +27,7 @@ function que(name) {
     help.que[name].push([].slice.call(arguments,0))
   }
 }
-["replaceState","pushState"].map(i => {que(i)})
+["replaceState","pushState","log","notify","cmd"].map(i => {que(i)})
 
 /* switch to a page */
 function switchPage(p) {
@@ -37,3 +37,5 @@ function switchPage(p) {
 
 /* hide all pages until everything has loaded */
 $(".page").hide()
+/* except the loading page */
+$("#page-loading").show()

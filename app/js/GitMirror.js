@@ -6,20 +6,28 @@ pagejs=page
 //GitMirror main class
 class GitMirror extends ZeroFrame {
     onOpenWebsocket () {
+        self=this
         this.cmd("siteInfo", {}, (site_info) => {
-            if (site_info.cert_user_id)
-                document.getElementById("select_user").innerText = site_info.cert_user_id
+            //if (site_info.cert_user_id)
+            //    document.getElementById("select_user").innerText = site_info.cert_user_id
             this.site_info = site_info
             console.log(site_info)
         })
         /* register event handlers */
         help.replaceState((a,b,c) => {
-          this.log("repl",a,b,c)
           this.cmd("wrapperReplaceState",[a,b,c])
         })
         help.pushState((a,b,c) => {
-          this.log("push",a,b,c)
           this.cmd("wrapperPushState",[a,b,c])
+        })
+        help.log(function(){
+          self.log.apply(this,arguments)
+        })
+        help.notify(function(type,info,time){
+          self.cmd("wrapperNotification",[type,info,time])
+        })
+        help.cmd(function(cmd,arg,cb){
+          self.cmd(cmd,arg,cb)
         })
         /* redirects */
         pagejs("Users/:user",(p) => {
@@ -48,7 +56,7 @@ class GitMirror extends ZeroFrame {
           var hub=p.params.hub // TODO: do something with it
           switchPage("hub")
         })
-        pagejs("User",(p) => {
+        pagejs("User/:user",(p) => {
           var user=p.params.user // TODO: do something with it
           switchPage("user")
         })
@@ -61,6 +69,7 @@ class GitMirror extends ZeroFrame {
           switchPage("home")
         })
         pagejs("*",() => {
+          _404.$data.url=help.getQPath()
           switchPage("404")
         })
         /* and run */
